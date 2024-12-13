@@ -11,7 +11,7 @@ type BaseDayThreeSolver struct {
 }
 
 func (solver *BaseDayThreeSolver) ReadData(data []byte) error {
-	solver.instructions = strings.Split(strings.TrimSpace(string(data)), "\n")
+	solver.instructions = strings.Split(string(data), "\n")
 
 	return nil
 }

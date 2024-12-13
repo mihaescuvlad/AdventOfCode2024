@@ -12,7 +12,7 @@ func main() {
 		fmt.Println("Error:", err)
 	}
 
-	var solver solver.AocSolver = &solver.DayThreeSolverP2{}
+	var solver solver.AocSolver = &solver.DayFourSolverP2{}
 
 	if err := solver.ReadData(content); err != nil {
 		fmt.Println("Error:", err)

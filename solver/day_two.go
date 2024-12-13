@@ -38,7 +38,7 @@ type DayTwoSolverP1 struct {
 	BaseDayTwoSolver
 }
 
-func CheckReport(data []int) bool {
+func checkReport(data []int) bool {
 	if !sort.IsSorted(sort.IntSlice(data)) && !sort.IsSorted(sort.Reverse(sort.IntSlice(data))) {
 		return false
 	}
@@ -58,7 +58,7 @@ func (solver *DayTwoSolverP1) Solve() []byte {
 	safeReports := 0
 
 	for _, report := range solver.reports {
-		if CheckReport(report) {
+		if checkReport(report) {
 			safeReports++
 		}
 	}
@@ -74,7 +74,7 @@ func (solver *DayTwoSolverP2) Solve() []byte {
 	safeReports := 0
 
 	for _, report := range solver.reports {
-		if CheckReport(report) {
+		if checkReport(report) {
 			safeReports++
 			continue
 		}
@@ -83,7 +83,7 @@ func (solver *DayTwoSolverP2) Solve() []byte {
 			firstPart := append([]int(nil), report[:i]...)
 			copyReport := append(firstPart, report[i+1:]...)
 
-			if CheckReport(copyReport) {
+			if checkReport(copyReport) {
 				safeReports++
 				break
 			}
